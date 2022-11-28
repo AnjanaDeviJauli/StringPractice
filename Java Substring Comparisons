@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Solution {
+
+    public static String getSmallestAndLargest(String s, int k) {
+        String smallest = "";
+        String largest = "";
+        
+        //Initializing string array 
+        String[] stringArray = new String[s.length()-2];
+        
+        //Generatins substring and assigning to the string array
+       for(int i=0;i<s.length()-2;i++)
+    {
+        stringArray[i]=s.substring(i, i+3);
+    }
+    
+    //Sorting the string array
+    for(int j=0;j<stringArray.length-1;j++)
+    {
+        for(int y=j+1;y<stringArray.length;y++) {
+        int compare = stringArray[j].compareTo(stringArray[y]);
+        if(compare>0)
+        {
+            String temp=stringArray[j];
+            stringArray[j]=stringArray[y];
+            stringArray[y]=temp;
+        }
+        }
+    }
+    
+    //assigining the first and last element of the string array
+    //to the smallest and largest variable
+    smallest=stringArray[0];
+    largest=stringArray[stringArray.length-1];
+    
+        return smallest + "\n" + largest;
+    }
+
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.next();
+        int k = scan.nextInt();
+        scan.close();
+      
+        System.out.println(getSmallestAndLargest(s, k));
+    }
+}
