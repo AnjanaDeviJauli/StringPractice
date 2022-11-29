@@ -7,15 +7,15 @@ public class Solution {
         String largest = "";
         
         //Initializing string array 
-        String[] stringArray = new String[s.length()-2];
+        int sizeOfArray = s.length()-(k-1);
+        String[] stringArray = new String[sizeOfArray];
         
         //Generatins substring and assigning to the string array
-       for(int i=0;i<s.length()-2;i++)
+       for(int i=0;i<sizeOfArray;i++)
     {
-        stringArray[i]=s.substring(i, i+3);
+        stringArray[i]=s.substring(i, i+k);
     }
-    
-    //Sorting the string array
+
     for(int j=0;j<stringArray.length-1;j++)
     {
         for(int y=j+1;y<stringArray.length;y++) {
@@ -28,9 +28,6 @@ public class Solution {
         }
         }
     }
-    
-    //assigining the first and last element of the string array
-    //to the smallest and largest variable
     smallest=stringArray[0];
     largest=stringArray[stringArray.length-1];
     
