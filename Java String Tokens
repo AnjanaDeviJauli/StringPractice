@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.*;
+
+
+public class Solution {
+
+      public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        s=s.trim();
+        String[] newStringArray = s.split("[^a-zA-Z]+");
+        System.out.println(newStringArray.length);
+        for(int i=0;i<newStringArray.length;i++){
+            System.out.println(newStringArray[i]);
+        }
+        
+        scan.close();
+    }
+}
