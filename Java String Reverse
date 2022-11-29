@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String A = sc.next();
+        /* Enter your code here. Print output to STDOUT. */
+        //Using split method to get individual letters of the string
+        String[] characterString = new String[A.length()];
+        characterString = A.split("");
+        
+        //reversing the string array and assigning to new string array
+        String[] reversedString = new String[A.length()];
+        int x = 0;
+        for (int i = characterString.length - 1; i >= 0; i--) {
+            reversedString[x] = (characterString[i]);
+            x++;
+        }
+        
+        //joining the string array to a single string
+        String B = String.join("", reversedString);
+        
+        //compare to find out if the original and reversed string aqual
+        if (A.equals(B)) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+    }
+}
